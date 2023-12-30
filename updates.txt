@@ -1,0 +1,12 @@
+make fullscreen:
+        self.root.attributes('-fullscreen',True)
+        # f11 ket turn full screen on and off
+        self.root.bind("<F11>", self.toggle_fullscreen)
+    
+    def toggle_fullscreen(self,event=None):
+        # This line toggles the fullscreen state of the application window. 
+        # `self.root.attributes('-fullscreen')` checks the current boolean state of fullscreen (True or False).
+        # `not` inverts the boolean value. If the window is in fullscreen, it will return False, and vice versa.
+        # The updated (inverted) boolean value is then passed back to `self.root.attributes('-fullscreen')`
+        # to set the new fullscreen state.
+        self.root.attributes('-fullscreen',not self.root.attributes('-fullscreen'))
